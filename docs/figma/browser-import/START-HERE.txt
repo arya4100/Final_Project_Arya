@@ -1,0 +1,13 @@
+FIGMA IN YOUR BROWSER - NO PLUGIN REQUIRED
+
+1. Open figma.com and create a new Figma Design file (not FigJam or Slides).
+2. Open this folder in Windows File Explorer.
+3. Select the SIX .svg files. Do not select the PNG previews.
+4. Drag them from File Explorer onto the empty Figma canvas.
+5. Press Shift+1 to zoom to all imported screens; arrange them side by side.
+6. Rename the file SmartStock - High-fidelity UI.
+7. Use Share > Copy link and send that link for the report.
+
+The SVGs contain vector shapes, icons and text rather than screenshot images. Figma may convert SVG text to vector outlines; use the desktop plugin if native editable text is required. Review the imported layouts before submission. These files are prepared designs, not proof of a completed Figma import.
+
+Official Figma guide: https://help.figma.com/hc/en-us/articles/360040028034-Add-images-and-videos-to-designs
