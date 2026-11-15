@@ -8,6 +8,6 @@ transforming...
 rendering chunks...
 computing gzip size...
 dist/index.html                   0.59 kB │ gzip:  0.37 kB
-dist/assets/index-BSNgCAXo.css   18.47 kB │ gzip:  4.91 kB
-dist/assets/index-2GNSXTqM.js   268.00 kB │ gzip: 82.01 kB │ map: 1,158.69 kB
-✓ built in 1.80s
+dist/assets/index-3JNbqsRX.css   19.23 kB │ gzip:  5.08 kB
+dist/assets/index-Gkn0Rl6H.js   269.28 kB │ gzip: 82.32 kB │ map: 1,161.13 kB
+✓ built in 3.59s

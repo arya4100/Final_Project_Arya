@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "role": "employee",
+  "realPushReceipts": 2,
+  "twoConsecutiveInAppPopups": true,
+  "notifications": [
+    {
+      "title": "Low stock · SmartStock",
+      "body": "Test notification: 3 remaining",
+      "renotify": true,
+      "requireInteraction": true
+    }
+  ],
+  "note": "Native notification is registered; Windows banner display remains controlled by OS settings."
+}

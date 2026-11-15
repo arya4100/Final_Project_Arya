@@ -13,5 +13,6 @@
   "githubVisibility": "public",
   "setupEvidence": "Completed: actual PowerShell screenshot and transcript of a fresh setup reproduction.",
   "persistentDatabase": "Completed: WiredTiger single-node replica set at 127.0.0.1:27028; marker survived shutdown and restart.",
-  "figmaStatus": "Six high-fidelity editable screens and colour styles prepared in docs/figma; import into a signed-in Figma Design file is still required."
+  "figmaStatus": "Six high-fidelity editable screens and colour styles prepared in docs/figma; import into a signed-in Figma Design file is still required.",
+  "popupEvidence": "Completed: two consecutive real push receipts produced in-app popups; native notifications use renotify and requireInteraction. Windows banner visibility remains OS-controlled."
 }

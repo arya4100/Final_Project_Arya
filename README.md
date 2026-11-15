@@ -57,3 +57,5 @@ Run `npm run test:api-collection` for the 23-request Postman collection, `npm ru
 ### Testing notification popups
 
 In Settings, click **Enable notifications**, allow browser permission, then click **Send test notification**. Both employees and managers can test their own browser; test requests cannot notify another account. A push-service acceptance message confirms sending, while Windows notification permissions and Do not disturb determine whether a desktop popup is shown.
+
+When a real push reaches the active page, SmartStock also displays a persistent **Push received** card. This card is triggered by a service-worker receipt, not by the send button. Native notifications use `renotify` and `requireInteraction` to request renewed alerts for repeated tests; Windows can still suppress desktop banners.

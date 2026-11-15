@@ -2,147 +2,147 @@ TAP version 13
 # Subtest: API health and unauthorized access
 ok 1 - API health and unauthorized access
   ---
-  duration_ms: 1448.166
+  duration_ms: 2493.7607
   ...
 # Subtest: invalid login and injection input fail
 ok 2 - invalid login and injection input fail
   ---
-  duration_ms: 229.8365
+  duration_ms: 343.9161
   ...
 # Subtest: employee cannot create products or self-escalate
 ok 3 - employee cannot create products or self-escalate
   ---
-  duration_ms: 7.8056
+  duration_ms: 31.0517
   ...
 # Subtest: registration creates employee and duplicate is conflict
 ok 4 - registration creates employee and duplicate is conflict
   ---
-  duration_ms: 686.4523
+  duration_ms: 1061.468
   ...
 # Subtest: product CRUD validates duplicate SKU, stale version and protected quantity
 ok 5 - product CRUD validates duplicate SKU, stale version and protected quantity
   ---
-  duration_ms: 50.5779
+  duration_ms: 66.6703
   ...
 # Subtest: movement create, idempotent retry, edit, delete preserve stock
 ok 6 - movement create, idempotent retry, edit, delete preserve stock
   ---
-  duration_ms: 78.9532
+  duration_ms: 191.7366
   ...
 # Subtest: oversell rolls back product and movement writes
 ok 7 - oversell rolls back product and movement writes
   ---
-  duration_ms: 17.8444
+  duration_ms: 28.9299
   ...
 # Subtest: replay after deletion does not resurrect a movement
 ok 8 - replay after deletion does not resurrect a movement
   ---
-  duration_ms: 44.0701
+  duration_ms: 59.2186
   ...
 # Subtest: concurrent sales cannot oversell
 ok 9 - concurrent sales cannot oversell
   ---
-  duration_ms: 39.3537
+  duration_ms: 50.3115
   ...
 # Subtest: push routes require auth and reject private endpoints
 ok 10 - push routes require auth and reject private endpoints
   ---
-  duration_ms: 58.8496
+  duration_ms: 66.0153
   ...
 # Subtest: employees can test their own subscriptions without notifying another user
 ok 11 - employees can test their own subscriptions without notifying another user
   ---
-  duration_ms: 648.1324
+  duration_ms: 380.38
   ...
 # Subtest: cross-origin mutations blocked and missing records return 404
 ok 12 - cross-origin mutations blocked and missing records return 404
   ---
-  duration_ms: 20.3767
+  duration_ms: 20.2346
   ...
 # Subtest: unused product deletion and logout revocation
 ok 13 - unused product deletion and logout revocation
   ---
-  duration_ms: 57.9653
+  duration_ms: 40.9344
   ...
 # Subtest: product validates zero values and trims names
 ok 14 - product validates zero values and trims names
   ---
-  duration_ms: 2.4654
+  duration_ms: 2.7452
   ...
 # Subtest: rejects invalid product price=-1
 ok 15 - rejects invalid product price=-1
   ---
-  duration_ms: 0.9505
+  duration_ms: 1.0357
   ...
 # Subtest: rejects invalid product quantity=-1
 ok 16 - rejects invalid product quantity=-1
   ---
-  duration_ms: 0.2049
+  duration_ms: 0.2201
   ...
 # Subtest: rejects invalid product quantity=1.5
 ok 17 - rejects invalid product quantity=1.5
   ---
-  duration_ms: 0.2662
+  duration_ms: 0.3098
   ...
 # Subtest: rejects invalid product minimum=-1
 ok 18 - rejects invalid product minimum=-1
   ---
-  duration_ms: 0.1584
+  duration_ms: 0.1819
   ...
 # Subtest: rejects invalid product sku=bad sku
 ok 19 - rejects invalid product sku=bad sku
   ---
-  duration_ms: 0.1074
+  duration_ms: 0.2152
   ...
 # Subtest: rejects invalid product name=a
 ok 20 - rejects invalid product name=a
   ---
-  duration_ms: 0.1635
+  duration_ms: 0.2036
   ...
 # Subtest: rejects invalid product category=invalid
 ok 21 - rejects invalid product category=invalid
   ---
-  duration_ms: 0.2205
+  duration_ms: 0.2911
   ...
 # Subtest: rejects unknown product keys and operator objects
 ok 22 - rejects unknown product keys and operator objects
   ---
-  duration_ms: 0.6059
+  duration_ms: 0.8936
   ...
 # Subtest: credentials normalize email and reject short passwords
 ok 23 - credentials normalize email and reject short passwords
   ---
-  duration_ms: 0.9117
+  duration_ms: 1.2227
   ...
 # Subtest: movement requires positive integer and UUID
 ok 24 - movement requires positive integer and UUID
   ---
-  duration_ms: 2.4993
+  duration_ms: 3.2593
   ...
 # Subtest: delta correctly signs IN and OUT
 ok 25 - delta correctly signs IN and OUT
   ---
-  duration_ms: 0.1023
+  duration_ms: 0.1253
   ...
 # Subtest: stock-in adds and stock-out subtracts
 ok 26 - stock-in adds and stock-out subtracts
   ---
-  duration_ms: 0.0831
+  duration_ms: 0.1246
   ...
 # Subtest: overselling returns a conflict
 ok 27 - overselling returns a conflict
   ---
-  duration_ms: 0.2289
+  duration_ms: 0.2641
   ...
 # Subtest: editing reverses old effect before applying new
 ok 28 - editing reverses old effect before applying new
   ---
-  duration_ms: 0.0659
+  duration_ms: 0.0702
   ...
 # Subtest: deleting reverses movement and cannot make stock negative
 ok 29 - deleting reverses movement and cannot make stock negative
   ---
-  duration_ms: 0.0687
+  duration_ms: 0.1256
   ...
 1..29
 # tests 29
@@ -152,4 +152,4 @@ ok 29 - deleting reverses movement and cannot make stock negative
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 4498.015
+# duration_ms 6592.7119
