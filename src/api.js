@@ -1,0 +1,1 @@
+export async function api(path,options={}){const response=await fetch('/api'+path,{credentials:'same-origin',headers:{'Content-Type':'application/json'},...options,body:options.body?JSON.stringify(options.body):undefined});const data=await response.json();if(!response.ok)throw Object.assign(new Error(data.error||'Request failed'),{status:response.status});return data;}

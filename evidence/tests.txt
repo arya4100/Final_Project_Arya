@@ -1,0 +1,150 @@
+TAP version 13
+# Subtest: API health and unauthorized access
+ok 1 - API health and unauthorized access
+  ---
+  duration_ms: 1368.9161
+  ...
+# Subtest: invalid login and injection input fail
+ok 2 - invalid login and injection input fail
+  ---
+  duration_ms: 230.4103
+  ...
+# Subtest: employee cannot create products or self-escalate
+ok 3 - employee cannot create products or self-escalate
+  ---
+  duration_ms: 8.6965
+  ...
+# Subtest: registration creates employee and duplicate is conflict
+ok 4 - registration creates employee and duplicate is conflict
+  ---
+  duration_ms: 696.8384
+  ...
+# Subtest: product CRUD validates duplicate SKU, stale version and protected quantity
+ok 5 - product CRUD validates duplicate SKU, stale version and protected quantity
+  ---
+  duration_ms: 48.7073
+  ...
+# Subtest: movement create, idempotent retry, edit, delete preserve stock
+ok 6 - movement create, idempotent retry, edit, delete preserve stock
+  ---
+  duration_ms: 84.3421
+  ...
+# Subtest: oversell rolls back product and movement writes
+ok 7 - oversell rolls back product and movement writes
+  ---
+  duration_ms: 19.2295
+  ...
+# Subtest: replay after deletion does not resurrect a movement
+ok 8 - replay after deletion does not resurrect a movement
+  ---
+  duration_ms: 51.4449
+  ...
+# Subtest: concurrent sales cannot oversell
+ok 9 - concurrent sales cannot oversell
+  ---
+  duration_ms: 38.4834
+  ...
+# Subtest: push routes require auth/role and reject private endpoints
+ok 10 - push routes require auth/role and reject private endpoints
+  ---
+  duration_ms: 16.5569
+  ...
+# Subtest: cross-origin mutations blocked and missing records return 404
+ok 11 - cross-origin mutations blocked and missing records return 404
+  ---
+  duration_ms: 7.7295
+  ...
+# Subtest: unused product deletion and logout revocation
+ok 12 - unused product deletion and logout revocation
+  ---
+  duration_ms: 21.0744
+  ...
+# Subtest: product validates zero values and trims names
+ok 13 - product validates zero values and trims names
+  ---
+  duration_ms: 1.9956
+  ...
+# Subtest: rejects invalid product price=-1
+ok 14 - rejects invalid product price=-1
+  ---
+  duration_ms: 0.8195
+  ...
+# Subtest: rejects invalid product quantity=-1
+ok 15 - rejects invalid product quantity=-1
+  ---
+  duration_ms: 0.1678
+  ...
+# Subtest: rejects invalid product quantity=1.5
+ok 16 - rejects invalid product quantity=1.5
+  ---
+  duration_ms: 0.2278
+  ...
+# Subtest: rejects invalid product minimum=-1
+ok 17 - rejects invalid product minimum=-1
+  ---
+  duration_ms: 0.1467
+  ...
+# Subtest: rejects invalid product sku=bad sku
+ok 18 - rejects invalid product sku=bad sku
+  ---
+  duration_ms: 0.1013
+  ...
+# Subtest: rejects invalid product name=a
+ok 19 - rejects invalid product name=a
+  ---
+  duration_ms: 0.2012
+  ...
+# Subtest: rejects invalid product category=invalid
+ok 20 - rejects invalid product category=invalid
+  ---
+  duration_ms: 0.231
+  ...
+# Subtest: rejects unknown product keys and operator objects
+ok 21 - rejects unknown product keys and operator objects
+  ---
+  duration_ms: 0.8351
+  ...
+# Subtest: credentials normalize email and reject short passwords
+ok 22 - credentials normalize email and reject short passwords
+  ---
+  duration_ms: 0.9237
+  ...
+# Subtest: movement requires positive integer and UUID
+ok 23 - movement requires positive integer and UUID
+  ---
+  duration_ms: 3.1018
+  ...
+# Subtest: delta correctly signs IN and OUT
+ok 24 - delta correctly signs IN and OUT
+  ---
+  duration_ms: 0.1029
+  ...
+# Subtest: stock-in adds and stock-out subtracts
+ok 25 - stock-in adds and stock-out subtracts
+  ---
+  duration_ms: 0.0796
+  ...
+# Subtest: overselling returns a conflict
+ok 26 - overselling returns a conflict
+  ---
+  duration_ms: 0.2162
+  ...
+# Subtest: editing reverses old effect before applying new
+ok 27 - editing reverses old effect before applying new
+  ---
+  duration_ms: 0.0616
+  ...
+# Subtest: deleting reverses movement and cannot make stock negative
+ok 28 - deleting reverses movement and cannot make stock negative
+  ---
+  duration_ms: 0.0655
+  ...
+1..28
+# tests 28
+# suites 0
+# pass 28
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4195.8398

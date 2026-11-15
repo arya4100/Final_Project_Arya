@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {productSchema,movementSchema,reconcile,delta,credentials} from '../server/domain.js';
+const valid={name:'Oat milk',sku:'BEV-001',category:'Beverages',price:4.5,quantity:10,minimum:5};
+test('product validates zero values and trims names',()=>assert.equal(productSchema.parse({...valid,name:'  Milk ',price:0,quantity:0,minimum:0}).name,'Milk'));
+for(const [field,value]of [['price',-1],['quantity',-1],['quantity',1.5],['minimum',-1],['sku','bad sku'],['name','a'],['category','invalid']])test('rejects invalid product '+field+'='+value,()=>assert.throws(()=>productSchema.parse({...valid,[field]:value})));
+test('rejects unknown product keys and operator objects',()=>{assert.throws(()=>productSchema.parse({...valid,$set:{quantity:4}}));assert.throws(()=>productSchema.parse({...valid,name:{$ne:null}}));});
+test('credentials normalize email and reject short passwords',()=>{assert.equal(credentials.parse({email:'A@B.com',password:'abcdefghij'}).email,'a@b.com');assert.throws(()=>credentials.parse({email:'invalid',password:'short'}));});
+test('movement requires positive integer and UUID',()=>{const m={productId:'a'.repeat(24),type:'OUT',quantity:2,clientId:crypto.randomUUID()};assert.equal(movementSchema.parse(m).note,'');for(const quantity of [0,-1,1.5])assert.throws(()=>movementSchema.parse({...m,quantity}));assert.throws(()=>movementSchema.parse({...m,clientId:'bad'}));});
+test('delta correctly signs IN and OUT',()=>{assert.equal(delta({type:'IN',quantity:3}),3);assert.equal(delta({type:'OUT',quantity:3}),-3);});
+test('stock-in adds and stock-out subtracts',()=>{assert.equal(reconcile(10,null,{type:'IN',quantity:5}),15);assert.equal(reconcile(10,null,{type:'OUT',quantity:10}),0);});
+test('overselling returns a conflict',()=>assert.throws(()=>reconcile(3,null,{type:'OUT',quantity:4}),e=>e.status===409));
+test('editing reverses old effect before applying new',()=>{assert.equal(reconcile(7,{type:'OUT',quantity:3},{type:'OUT',quantity:6}),4);assert.equal(reconcile(15,{type:'IN',quantity:5},{type:'OUT',quantity:4}),6);});
+test('deleting reverses movement and cannot make stock negative',()=>{assert.equal(reconcile(7,{type:'OUT',quantity:3},null),10);assert.throws(()=>reconcile(2,{type:'IN',quantity:5},null));});

@@ -1,0 +1,34 @@
+{
+  "capturedAt": "2026-11-15T22:26:50.731Z",
+  "checks": [
+    "Manager login and real inventory dashboard",
+    "Browser product creation persisted to API",
+    "Browser stock-out recorded with author and quantity",
+    "Oversell rejected with visible server conflict",
+    "Offline reload renders cached shell and IndexedDB inventory",
+    "Offline command synchronized once on reconnect",
+    "Product metadata updated through browser",
+    "Movement edit reconciled through browser",
+    "Movement deletion reversed stock through browser",
+    "Product deletion completed after movement cleanup",
+    "390px mobile layout has no document overflow",
+    "Employee UI omits manager product controls",
+    "No uncaught browser JavaScript errors"
+  ],
+  "screenshots": [
+    "01-login",
+    "02-dashboard",
+    "03-inventory",
+    "04-movements",
+    "05-error-handling",
+    "06-alerts",
+    "07-settings",
+    "08-offline-dashboard",
+    "09-offline-queue",
+    "10-synchronized",
+    "11-mobile",
+    "12-employee",
+    "13-cache-inspection"
+  ],
+  "status": "passed"
+}

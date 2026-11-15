@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "before": {
+    "database": "smartstock",
+    "products": 8,
+    "persistent": true
+  },
+  "after": {
+    "markerSurvived": true,
+    "products": 8,
+    "replicaSet": "smartstock-local",
+    "members": [
+      {
+        "name": "127.0.0.1:27028",
+        "state": "PRIMARY",
+        "health": 1
+      }
+    ]
+  },
+  "storage": ".data/mongodb (WiredTiger)",
+  "scope": "Local single-node persistence, not cloud high availability"
+}

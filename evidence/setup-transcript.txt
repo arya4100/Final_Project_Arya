@@ -1,0 +1,37 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261116112239
+Username: ARYAPATEL\aryap
+RunAs User: ARYAPATEL\aryap
+Configuration Name: 
+Machine: ARYAPATEL (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoExit -NoProfile -ExecutionPolicy Bypass -File C:\Users\aryap\Desktop\Final Project\SmartStock\scripts\setup-reproduction.ps1
+Process ID: 37720
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SMARTSTOCK - CLEAN SETUP REPRODUCTION
+This is a real fresh setup reproduction, not the original creation session.
+> node --version
+v22.12.0
+> npm --version
+10.9.0
+> npm init -y   [frontend]
+> npm install react@19 react-dom@19 vite@6 @vitejs/plugin-react@4 --no-audit --no-fund
+
+added 65 packages in 4s
+> npm init -y   [backend]
+> npm install express@5 mongodb@6 bcryptjs jsonwebtoken web-push --no-audit --no-fund
+
+added 100 packages in 2s
+Frontend and backend setup reproduced successfully.
+**********************
+Windows PowerShell transcript end
+End time: 20261116112247
+**********************

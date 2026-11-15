@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "tool": "Native Chrome DevTools attached to running Node API",
+  "source": "server/domain.js",
+  "breakpointLine": 10,
+  "watchedValues": {
+    "current": 6,
+    "previous": null,
+    "next": {
+      "productId": "6afa2bca418af68f87313c0d",
+      "type": "OUT",
+      "quantity": 7,
+      "note": "Genuine debugger oversell evidence",
+      "clientId": "7e6298ff-e36d-4921-bd6c-eedc23b8eb38"
+    },
+    "previousEffect": 0,
+    "nextEffect": -7,
+    "result": -1
+  },
+  "httpStatus": 409,
+  "error": "Insufficient stock. Refresh inventory and review this movement."
+}

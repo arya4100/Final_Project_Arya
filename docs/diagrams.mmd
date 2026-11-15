@@ -1,0 +1,94 @@
+%% System architecture
+flowchart LR
+ Browser[React / Vite PWA] --> API[Express middleware and REST API]
+ Browser --> IDB[(Private IndexedDB snapshot and command queue)]
+ SW[Service worker / cached shell] --> Browser
+ API --> Rules[Zod validation and stock domain rules]
+ Rules --> Mongo[(MongoDB replica set / transactions)]
+ API --> Push[web-push / VAPID]
+ Push --> SW
+
+%% Class diagram
+classDiagram
+ class User {
+  ObjectId _id
+  string email
+  string passwordHash
+  enum role
+ }
+ class Product {
+  ObjectId _id
+  string sku
+  string name
+  string category
+  number price
+  integer quantity
+  integer minimum
+  integer version
+ }
+ class StockMovement {
+  ObjectId _id
+  string productId
+  enum type
+  integer quantity
+  UUID clientId
+  string actorId
+  Date createdAt
+ }
+ class AuditEntry {
+  string action
+  string actorId
+  object before
+  object after
+  Date at
+ }
+ class PushSubscription {
+  string userId
+  string endpoint
+  object subscription
+ }
+ class OfflineQueueItem {
+  UUID clientId
+  string user
+  object movement
+  enum state
+  string error
+ }
+ User "1" --> "*" StockMovement : records
+ Product "1" --> "*" StockMovement : affected by
+ User "1" --> "*" PushSubscription : subscribes
+ StockMovement --> AuditEntry : change history
+ OfflineQueueItem --> StockMovement : submits idempotently
+
+%% Stock-out sequence
+sequenceDiagram
+ actor Employee
+ participant UI as React PWA
+ participant IDB as IndexedDB
+ participant API as Express API
+ participant DB as MongoDB replica set
+ participant Push as Push provider
+ Employee->>UI: Record OUT quantity
+ alt Offline
+  UI->>IDB: Queue command with stable clientId
+  IDB-->>UI: Pending; confirmed quantity unchanged
+  UI->>API: Replay on reconnect
+ else Online
+  UI->>API: POST /movements (JWT + clientId)
+ end
+ API->>API: Authenticate; validate input
+ API->>DB: Begin transaction; check duplicate
+ alt Same actor and payload already committed
+  DB-->>API: Existing movement; no quantity change
+ else New command
+  API->>DB: Read product; calculate current - quantity
+  alt Insufficient stock
+   API-->>UI: 409 conflict; keep queued item for review
+  else Valid stock
+   API->>DB: Update product; insert movement + audit; commit
+   API-->>UI: 201 confirmed movement
+   opt Threshold crossed
+    API->>Push: Encrypted Web Push
+   end
+  end
+ end

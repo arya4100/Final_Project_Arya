@@ -1,0 +1,48 @@
+{
+  "name": "smartstock",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"node --watch server/index.js\" \"vite --host 127.0.0.1\"",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "test": "node --test --test-concurrency=1 tests/*.test.js",
+    "keys": "node scripts/keys.js",
+    "report": "node scripts/report.js",
+    "evidence": "node scripts/evidence.js",
+    "test:api-collection": "node scripts/run-api-evidence.js",
+    "verify:persistence": "node scripts/persistence-check.js",
+    "figma:package": "node scripts/figma-package.js",
+    "evidence:postman": "node scripts/postman-evidence.js",
+    "evidence:debugger": "node scripts/debugger-evidence.js",
+    "evidence:push": "node scripts/push-evidence.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "idb": "^8.0.3",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.468.0",
+    "mongodb": "^6.16.0",
+    "mongodb-memory-server": "^10.1.4",
+    "pino": "^9.6.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "web-push": "^3.6.7",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.4.1",
+    "concurrently": "^9.1.2",
+    "docx": "^9.5.0",
+    "newman": "^6.2.3",
+    "playwright": "^1.51.1",
+    "supertest": "^7.1.0",
+    "vite": "^6.3.5"
+  }
+}

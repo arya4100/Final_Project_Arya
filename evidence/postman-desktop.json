@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "requests": [
+    {
+      "name": "15-postman-products",
+      "method": "GET",
+      "path": "/products",
+      "status": 200,
+      "tool": "Actual Postman desktop request and response"
+    },
+    {
+      "name": "16-postman-validation",
+      "method": "POST",
+      "path": "/products",
+      "status": 400,
+      "tool": "Actual Postman desktop request and response"
+    },
+    {
+      "name": "17-postman-conflict",
+      "method": "POST",
+      "path": "/movements",
+      "status": 409,
+      "tool": "Actual Postman desktop request and response"
+    },
+    {
+      "name": "18-postman-push",
+      "method": "POST",
+      "path": "/push/test",
+      "status": 200,
+      "tool": "Actual Postman desktop request and response"
+    }
+  ]
+}

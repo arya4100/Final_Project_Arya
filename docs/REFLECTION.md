@@ -1,0 +1,19 @@
+# Project reflection
+
+The strongest result of SmartStock is consistent stock handling across a normal request, a disconnected browser and competing requests. A successful form submission alone cannot establish inventory accuracy. The implementation therefore treats quantity, movement history and audit writes as a transaction, and treats each queued movement as a command with a stable identity.
+
+The test that ran two competing sales showed why this matters: one transaction succeeded and the other returned a conflict after rechecking availability. A second regression test covered a less obvious case: replaying a creation request after its movement had already been deleted. Retaining command results prevents that late retry from recreating the movement and changing stock again.
+
+Browser testing also exposed a genuine offline initialization problem. The saved tab identity was cleared before the failed authentication request could fall back to it. Deferring cleanup until authentication initialization completed fixed offline reload. The correction was verified by reloading without a network connection, recording a pending movement and observing a single server-confirmed movement after reconnecting. This demonstrates why browser behavior must be tested alongside the isolated domain rules.
+
+Live debugging provided a concrete view of the validation rule. With six units available and an OUT movement of seven, the Watch pane showed current=6, previousEffect=0, nextEffect=-7 and result=-1. The API then returned 409 and left inventory unchanged. This connects the user-facing error to the exact domain state that caused it.
+
+The original temporary database was useful for repeatable tests but unsuitable for retaining coursework demonstrations between runs. A persistent WiredTiger replica set was added for local use, while tests retain isolated disposable databases. The first restart experiment revealed that a test-library port cache could rotate a replica member's port. Fixing the local mode to retain its configured port allowed the on-disk replica configuration to be reused; a marker record survived a complete shutdown and restart.
+
+Security verification included actual client behavior. Public registration cannot choose a manager role, forged employee requests receive 403, and injection-shaped data fails validation. For notifications, Chrome created a real encrypted subscription through fcm.googleapis.com. The server reported one successful send, the service worker received one push event and the browser created the expected low-stock notification. A 200 response from the test endpoint alone would not have established delivery.
+
+Evidence quality is part of the engineering outcome. The Postman collection ran 23 requests with 25 successful assertions, and separate desktop screenshots show authentic requests and responses. Setup evidence is labeled as a fresh reproduction because the original creation session cannot be reconstructed honestly. The Figma import package provides six editable high-fidelity screens, but a saved Figma file and URL must come from an authenticated Figma session. A prepared import package is not represented as a completed cloud design.
+
+Future development should add a durable notification outbox, shared logout revocation for multiple API instances, operational backups and full team administration. Local single-node replication enables transactions but does not provide cloud high availability. These limits are more useful to state accurately than to hide behind a broad claim that every possible scenario has been tested.
+
+This reflection describes observed project work and verification. Review it against your own understanding before the viva; it does not claim personal experiences or opinions that only the student can supply.

@@ -1,0 +1,361 @@
+{
+  "tool": "Newman — official Postman collection runner",
+  "executedAt": "2026-11-15T22:04:15.130Z",
+  "stats": {
+    "iterations": {
+      "total": 1,
+      "pending": 0,
+      "failed": 0
+    },
+    "items": {
+      "total": 23,
+      "pending": 0,
+      "failed": 0
+    },
+    "scripts": {
+      "total": 23,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequests": {
+      "total": 23,
+      "pending": 0,
+      "failed": 0
+    },
+    "requests": {
+      "total": 23,
+      "pending": 0,
+      "failed": 0
+    },
+    "tests": {
+      "total": 23,
+      "pending": 0,
+      "failed": 0
+    },
+    "assertions": {
+      "total": 25,
+      "pending": 0,
+      "failed": 0
+    },
+    "testScripts": {
+      "total": 23,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequestScripts": {
+      "total": 0,
+      "pending": 0,
+      "failed": 0
+    }
+  },
+  "failures": [],
+  "requests": [
+    {
+      "name": "01 Login manager",
+      "method": "POST",
+      "url": "http://127.0.0.1:4000/api/auth/login",
+      "status": 200,
+      "body": "Authentication response omitted to protect bearer tokens",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "02 Current user",
+      "method": "GET",
+      "url": "http://127.0.0.1:4000/api/auth/me",
+      "status": 200,
+      "body": "{\"id\":\"6afa2bca418af68f87313c07\",\"name\":\"Arya Patel\",\"email\":\"manager@smartstock.demo\",\"role\":\"manager\"}",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "03 Create product",
+      "method": "POST",
+      "url": "http://127.0.0.1:4000/api/products",
+      "status": 201,
+      "body": "{\"name\":\"Postman test product\",\"sku\":\"POST-1794780254\",\"category\":\"Other\",\"price\":5,\"quantity\":20,\"minimum\":5,\"_id\":\"6afa2c5ec4100034a911d094\"}",
+      "assertions": [
+        {
+          "name": "HTTP 201",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "04 List products",
+      "method": "GET",
+      "url": "http://127.0.0.1:4000/api/products",
+      "status": 200,
+      "body": "[{\"_id\":\"6afa2bca418af68f87313c0d\",\"name\":\"Extra virgin olive oil\",\"sku\":\"PAN-005\",\"category\":\"Pantry\",\"price\":14.5,\"quantity\":6,\"minimum\":10,\"version\":0,\"updatedAt\":\"2026-11-15T22:01:46.635Z\"},{\"_id\":\"6afa2bca418af68f87313c0f\",\"name\":\"Free-range eggs\",\"sku\":\"FRE-007\",\"category\":\"Fresh\",\"price\":9.5,\"quantity\":0,\"minimum\":12,\"version\":0,\"updatedAt\":\"2026-11-15T22:01:46.635Z\"},{\"_id\":\"6afa2bca418af68f87313c0c\",\"name\":\"House blend coffee\",\"sku\":\"BEV-004\",\"category\":\"Beverages\",\"price\":18.9,\"quantity\":36,\"minimum\":10,\"version\":0,\"updatedAt\":\"2026-11-15T22:01:46.635Z\"},{\"_id\":\"6afa2bca418af68f87313c0e\",\"name\":\"Lemon dish soap\",\"sku\":\"HOU-006\",\"category\":\"Household\",\"price\":5.9,\"quantity\":32,\"minimum\":8,\"version\":0,\"updatedAt\":\"2026-11-15T22:01:46.635Z\"},{\"_id\":\"6afa2bca418af68f87313c0a\",\"name\":\"Oat milk original\",\"sku\":\"BEV-002\",\"category\":\"Beverages\",\"price\":4.5,\"quantity\":8,\"minimum\":15,\"version\":0,\"updatedAt\":\"2026-11-15T22:01:46.635Z\"},{\"_id\":\"6afa2bca418af68f87313c09\",\"name\":\"Organic rolled oats\",\"sku\":\"PAN-001\",\"category\":\"Pantry\",\"price\":6.9,\"quantity\":48,\"minimum\":12,\"version\":0,\"updatedAt\":\"2026-11-15T22:01:46.635Z\"},{\"_id\":\"6afa2c5ec4100034a911d094\",\"name\":\"Postman test product\",\"sku\":\"POST-1794780254\",\"category\":\"Other\",\"price\":5,\"quantity\":20,\"minimum\":5,\"version\":0,\"updatedAt\":\"2026-11-15T22:04:14.283Z\"},{\"_id\":\"6afa2bca418af68f87313c0b\",\"name\":\"Sourdough loaf\",\"sku\":\"FRE-003\",\"category\":\"Fresh\",\"price\":8.5,\"quantity\":24,\"minimum\":8,\"version\":0,\"updatedAt\":\"2026-11-15T22:01:46.635Z\"},{\"_id\":\"6afa2bca418af68f87313c10\",\"name\":\"Wildflower honey\",\"sku\":\"PAN-008\",\"category\":\"Pantry\",\"price\":12.9,\"quantity\":27,\"minimum\":6,\"version\":0,\"updatedAt\":\"2026-11-15T22:01:46.635Z\"}]",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "Array of products",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "05 Read product",
+      "method": "GET",
+      "url": "http://127.0.0.1:4000/api/products/6afa2c5ec4100034a911d094",
+      "status": 200,
+      "body": "{\"_id\":\"6afa2c5ec4100034a911d094\",\"name\":\"Postman test product\",\"sku\":\"POST-1794780254\",\"category\":\"Other\",\"price\":5,\"quantity\":20,\"minimum\":5,\"version\":0,\"updatedAt\":\"2026-11-15T22:04:14.283Z\"}",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "06 Update product metadata",
+      "method": "PUT",
+      "url": "http://127.0.0.1:4000/api/products/6afa2c5ec4100034a911d094",
+      "status": 200,
+      "body": "{\"_id\":\"6afa2c5ec4100034a911d094\",\"name\":\"Updated Postman product\",\"sku\":\"POST-UPDATED-1794780254\",\"category\":\"Other\",\"price\":5,\"quantity\":20,\"minimum\":5,\"version\":1,\"updatedAt\":\"2026-11-15T22:04:14.382Z\"}",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "07 Reject negative price",
+      "method": "POST",
+      "url": "http://127.0.0.1:4000/api/products",
+      "status": 400,
+      "body": "{\"error\":\"price: Number must be greater than or equal to 0\",\"requestId\":\"96d6afb8-9fc2-46db-90e9-affb2e47d044\"}",
+      "assertions": [
+        {
+          "name": "HTTP 400",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "08 Create movement",
+      "method": "POST",
+      "url": "http://127.0.0.1:4000/api/movements",
+      "status": 201,
+      "body": "{\"productId\":\"6afa2c5ec4100034a911d094\",\"type\":\"OUT\",\"quantity\":4,\"note\":\"Postman sale\",\"clientId\":\"d5ddd9bf-0ce0-47e2-a2ce-86089795a410\",\"actorId\":\"6afa2bca418af68f87313c07\",\"actor\":\"Arya Patel\",\"createdAt\":\"2026-11-15T22:04:14.445Z\",\"updatedBy\":\"Arya Patel\",\"updatedAt\":\"2026-11-15T22:04:14.445Z\",\"_id\":\"6afa2c5ec4100034a911d095\"}",
+      "assertions": [
+        {
+          "name": "HTTP 201",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "09 Read movement",
+      "method": "GET",
+      "url": "http://127.0.0.1:4000/api/movements/6afa2c5ec4100034a911d095",
+      "status": 200,
+      "body": "{\"_id\":\"6afa2c5ec4100034a911d095\",\"productId\":\"6afa2c5ec4100034a911d094\",\"type\":\"OUT\",\"quantity\":4,\"note\":\"Postman sale\",\"clientId\":\"d5ddd9bf-0ce0-47e2-a2ce-86089795a410\",\"actorId\":\"6afa2bca418af68f87313c07\",\"actor\":\"Arya Patel\",\"createdAt\":\"2026-11-15T22:04:14.445Z\",\"updatedBy\":\"Arya Patel\",\"updatedAt\":\"2026-11-15T22:04:14.445Z\"}",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "10 Idempotent retry",
+      "method": "POST",
+      "url": "http://127.0.0.1:4000/api/movements",
+      "status": 201,
+      "body": "{\"productId\":\"6afa2c5ec4100034a911d094\",\"type\":\"OUT\",\"quantity\":4,\"note\":\"Postman sale\",\"clientId\":\"d5ddd9bf-0ce0-47e2-a2ce-86089795a410\",\"actorId\":\"6afa2bca418af68f87313c07\",\"actor\":\"Arya Patel\",\"createdAt\":\"2026-11-15T22:04:14.445Z\",\"updatedBy\":\"Arya Patel\",\"updatedAt\":\"2026-11-15T22:04:14.445Z\",\"_id\":\"6afa2c5ec4100034a911d095\"}",
+      "assertions": [
+        {
+          "name": "HTTP 201",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "11 List movements",
+      "method": "GET",
+      "url": "http://127.0.0.1:4000/api/movements",
+      "status": 200,
+      "body": "[{\"_id\":\"6afa2c5ec4100034a911d095\",\"productId\":\"6afa2c5ec4100034a911d094\",\"type\":\"OUT\",\"quantity\":4,\"note\":\"Postman sale\",\"clientId\":\"d5ddd9bf-0ce0-47e2-a2ce-86089795a410\",\"actorId\":\"6afa2bca418af68f87313c07\",\"actor\":\"Arya Patel\",\"createdAt\":\"2026-11-15T22:04:14.445Z\",\"updatedBy\":\"Arya Patel\",\"updatedAt\":\"2026-11-15T22:04:14.445Z\"}]",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "12 Edit movement",
+      "method": "PUT",
+      "url": "http://127.0.0.1:4000/api/movements/6afa2c5ec4100034a911d095",
+      "status": 200,
+      "body": "{\"productId\":\"6afa2c5ec4100034a911d094\",\"type\":\"OUT\",\"quantity\":6,\"note\":\"Postman sale\",\"clientId\":\"d5ddd9bf-0ce0-47e2-a2ce-86089795a410\",\"actorId\":\"6afa2bca418af68f87313c07\",\"actor\":\"Arya Patel\",\"createdAt\":\"2026-11-15T22:04:14.445Z\",\"updatedBy\":\"Arya Patel\",\"updatedAt\":\"2026-11-15T22:04:14.569Z\",\"_id\":\"6afa2c5ec4100034a911d095\"}",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "13 Reject overselling",
+      "method": "POST",
+      "url": "http://127.0.0.1:4000/api/movements",
+      "status": 409,
+      "body": "{\"error\":\"Insufficient stock. Refresh inventory and review this movement.\",\"requestId\":\"5d2dd590-3f00-4f9a-b6a6-2fb1da221561\"}",
+      "assertions": [
+        {
+          "name": "HTTP 409",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "14 Protect product history",
+      "method": "DELETE",
+      "url": "http://127.0.0.1:4000/api/products/6afa2c5ec4100034a911d094",
+      "status": 409,
+      "body": "{\"error\":\"Keep products with movement history for audit integrity.\",\"requestId\":\"41a6dd24-178e-4b50-828c-82eabfc2422e\"}",
+      "assertions": [
+        {
+          "name": "HTTP 409",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "15 Delete movement and reverse effect",
+      "method": "DELETE",
+      "url": "http://127.0.0.1:4000/api/movements/6afa2c5ec4100034a911d095",
+      "status": 200,
+      "body": "{\"message\":\"Movement reversed and deleted\"}",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "16 Delete product",
+      "method": "DELETE",
+      "url": "http://127.0.0.1:4000/api/products/6afa2c5ec4100034a911d094",
+      "status": 200,
+      "body": "{\"message\":\"Product deleted\"}",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "17 Public push key",
+      "method": "GET",
+      "url": "http://127.0.0.1:4000/api/push/key",
+      "status": 200,
+      "body": "{\"publicKey\":\"BBNUSt2VZO7qqB7MGMtpUgEn7i9lHhldTuu-qoudGPY7hcYK0aohbdiEhqFJRXb48yTxorOI0Wbjdxq3RvA5tzM\"}",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "18 Send test push (subscribe in browser first)",
+      "method": "POST",
+      "url": "http://127.0.0.1:4000/api/push/test",
+      "status": 200,
+      "body": "{\"sent\":0,\"failed\":0}",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "Delivery counts",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "19 Reject unsafe push endpoint",
+      "method": "POST",
+      "url": "http://127.0.0.1:4000/api/push/subscribe",
+      "status": 400,
+      "body": "{\"error\":\"endpoint: Unsupported push provider\",\"requestId\":\"66d6bb49-8807-4327-b077-6d1f58bab0aa\"}",
+      "assertions": [
+        {
+          "name": "HTTP 400",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "20 Login employee",
+      "method": "POST",
+      "url": "http://127.0.0.1:4000/api/auth/login",
+      "status": 200,
+      "body": "Authentication response omitted to protect bearer tokens",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "21 Employee forbidden product create",
+      "method": "POST",
+      "url": "http://127.0.0.1:4000/api/products",
+      "status": 403,
+      "body": "{\"error\":\"Manager permission required\"}",
+      "assertions": [
+        {
+          "name": "HTTP 403",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "22 Logout",
+      "method": "POST",
+      "url": "http://127.0.0.1:4000/api/auth/logout",
+      "status": 200,
+      "body": "{\"message\":\"Signed out\"}",
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "23 Logged out token rejected",
+      "method": "GET",
+      "url": "http://127.0.0.1:4000/api/auth/me",
+      "status": 401,
+      "body": "{\"error\":\"Please sign in again.\"}",
+      "assertions": [
+        {
+          "name": "HTTP 401",
+          "passed": true
+        }
+      ]
+    }
+  ]
+}

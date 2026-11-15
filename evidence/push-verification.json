@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-15T22:11:58.566Z",
+  "status": "passed",
+  "scope": "Real PushManager subscription and provider delivery; no injected push event",
+  "permission": "granted",
+  "subscription": {
+    "provider": "fcm.googleapis.com",
+    "hasEncryptionKeys": true
+  },
+  "delivery": {
+    "sent": 1,
+    "failed": 0
+  },
+  "receivedPushEvents": 1,
+  "notifications": [
+    {
+      "title": "Low stock · SmartStock",
+      "body": "Test notification: 3 remaining",
+      "tag": "smartstock-low-stock"
+    }
+  ]
+}
