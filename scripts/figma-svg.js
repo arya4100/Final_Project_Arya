@@ -4,7 +4,7 @@ const designs=JSON.parse(readFileSync('docs/figma/designs.json','utf8'));
 mkdirSync('docs/figma/browser-import',{recursive:true});
 const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
 try{const page=await browser.newPage();
- const wrapped=await page.evaluate(designs=>{const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');return designs.map(design=>({...design,nodes:design.nodes.map(node=>{if(node.type!=='text')return node;ctx.font=`${node.weight} ${node.size}px Arial`;const lines=[];let line='';for(const word of node.text.split(' ')){const next=line?line+' '+word:word;if(line&&ctx.measureText(next).width>node.w+8){lines.push(line);line=word;}else line=next;}if(line)lines.push(line);return {...node,lines};})}));},designs);
+ const wrapped=await page.evaluate(designs=>{const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');return designs.map(design=>({...design,nodes:design.nodes.map(node=>{if(node.type!=='text')return node;if(node.h<node.size*1.6)return {...node,lines:[node.text]};ctx.font=`${node.weight} ${node.size}px Arial`;const lines=[];let line='';for(const word of node.text.split(' ')){const next=line?line+' '+word:word;if(line&&ctx.measureText(next).width>node.w+8){lines.push(line);line=word;}else line=next;}if(line)lines.push(line);return {...node,lines};})}));},designs);
  const escape=text=>String(text).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
  const color=value=>value?`rgb(${[value.r,value.g,value.b].map(v=>Math.round(v*255)).join(',')})`:'none';
  const num=value=>Number(value.toFixed(3));
