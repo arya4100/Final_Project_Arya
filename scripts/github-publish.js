@@ -14,7 +14,7 @@ if(existsSync('.tools/github-target.json')){const target=JSON.parse(readFileSync
  for(const name of ['smartstock-inventory-pwa','smartstock-coursework-2026','smartstock-inventory-2026-'+Date.now()]){const response=await fetch(`https://api.github.com/repos/${user.login}/${name}`,{headers});if(response.status!==404)continue;repo=await api('/user/repos',{method:'POST',body:JSON.stringify({name,description:'SmartStock inventory PWA — React, Express, MongoDB transactions, offline sync and Web Push',private:true,auto_init:false})});break;}
  if(!repo)throw Error('Could not select a new repository name.');writeFileSync('.tools/github-target.json',JSON.stringify({full_name:repo.full_name,html_url:repo.html_url,clone_url:repo.clone_url,private:repo.private},null,2));
 }
-const submission=JSON.parse(readFileSync('docs/submission.json','utf8'));submission.githubUrl=repo.html_url;submission.githubVisibility='private';writeFileSync('docs/submission.json',JSON.stringify(submission,null,2));
+const submission=JSON.parse(readFileSync('docs/submission.json','utf8'));submission.githubUrl=repo.html_url;submission.githubVisibility=repo.private?'private':'public';writeFileSync('docs/submission.json',JSON.stringify(submission,null,2));
 if(process.argv.includes('--prepare-only')){console.log('Prepared private repository:',repo.html_url);process.exit(0);}
 const ignored=git(['check-ignore','.env','.data/','.tools/','.evidence-private/','node_modules/']).trim().split('\n');if(ignored.length<5)throw Error('Private file ignore check failed');
 git(['config','user.name',user.name||user.login]);git(['config','user.email',`${user.id}+${user.login}@users.noreply.github.com`]);

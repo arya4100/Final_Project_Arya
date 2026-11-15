@@ -17,10 +17,10 @@ The application, reports, diagrams, screenshots, collection and tests are includ
 - [x] Live Chrome DevTools breakpoint and expanded Watch pane during an API oversell rejection.
 - [x] Real FCM browser subscription, encrypted send, received push event and browser notification verified.
 - [x] Persistent local WiredTiger replica set: saved marker survived complete shutdown and restart.
-- [x] GitHub repository created at https://github.com/arya4100/smartstock-inventory-pwa; final push verified by the publication script.
+- [x] Project published at https://github.com/arya4100/Final_Project_Arya; final push verified by the publication script.
 - [ ] Optional bonus: configure Atlas, show redacted replication/scaling evidence.
 - [x] Evidence-based reflection completed in docs/REFLECTION.md and the report.
-- [ ] Review the reflection, share the private repository with the assessor and practice the viva.
+- [ ] Review the reflection, confirm the repository is accessible to the assessor and practice the viva.
 
 The Figma package is fully prepared in docs/figma: six high-fidelity screens with editable text, shapes, icons and colour styles. It still needs to be imported and saved in an authenticated Figma account; a local package cannot supply an actual Figma file URL. See docs/figma/README.md.
 

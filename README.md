@@ -50,6 +50,6 @@ No grade is guaranteed. Actual Postman, debugger, setup-reproduction and real pu
 
 ## Repository and additional verification
 
-GitHub: https://github.com/arya4100/smartstock-inventory-pwa (private; share with your assessor).
+GitHub: https://github.com/arya4100/Final_Project_Arya (public).
 
 Run `npm run test:api-collection` for the 23-request Postman collection, `npm run verify:persistence` with the app stopped for a database restart check, and `npm run figma:package` with the built app running to refresh the editable design import package. Actual desktop screenshots, live Watch values and FCM delivery results are in `evidence/`.
