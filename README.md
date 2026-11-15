@@ -53,3 +53,7 @@ No grade is guaranteed. Actual Postman, debugger, setup-reproduction and real pu
 GitHub: https://github.com/arya4100/Final_Project_Arya (public).
 
 Run `npm run test:api-collection` for the 23-request Postman collection, `npm run verify:persistence` with the app stopped for a database restart check, and `npm run figma:package` with the built app running to refresh the editable design import package. Actual desktop screenshots, live Watch values and FCM delivery results are in `evidence/`.
+
+### Testing notification popups
+
+In Settings, click **Enable notifications**, allow browser permission, then click **Send test notification**. Both employees and managers can test their own browser; test requests cannot notify another account. A push-service acceptance message confirms sending, while Windows notification permissions and Do not disturb determine whether a desktop popup is shown.

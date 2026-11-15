@@ -17,3 +17,4 @@ evidence/*.json
 !evidence/debugger-verification.json
 !evidence/persistence-verification.json
 !evidence/final-verification.json
+!evidence/employee-push-verification.json

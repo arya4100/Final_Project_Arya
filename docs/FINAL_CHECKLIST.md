@@ -5,7 +5,7 @@ The application, reports, diagrams, screenshots, collection and tests are includ
 - [x] Production React/Vite build succeeds.
 - [x] MongoDB-backed product and stock movement CRUD, JWT roles and validation.
 - [x] Real replica-set transactions and audit history.
-- [x] 28 passing unit/API tests, including concurrent overselling and replay after deletion.
+- [x] 29 passing unit/API tests, including concurrent overselling and replay after deletion.
 - [x] 13 passing browser checks and genuine UI/cache screenshots.
 - [x] Offline reload, private IndexedDB snapshots and idempotent movement sync.
 - [x] Web Push implementation and generated server-side VAPID keys.

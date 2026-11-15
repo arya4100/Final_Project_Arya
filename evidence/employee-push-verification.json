@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "role": "employee",
+  "testButtonEnabled": true,
+  "sentThroughVisibleButton": true,
+  "receivedPushEvents": 1,
+  "notifications": [
+    {
+      "title": "Low stock · SmartStock",
+      "body": "Test notification: 3 remaining"
+    }
+  ]
+}

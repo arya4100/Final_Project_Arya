@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-11-15T22:11:58.566Z",
+  "capturedAt": "2026-11-15T23:01:44.565Z",
   "status": "passed",
   "scope": "Real PushManager subscription and provider delivery; no injected push event",
   "permission": "granted",
@@ -8,10 +8,10 @@
     "hasEncryptionKeys": true
   },
   "delivery": {
-    "sent": 1,
+    "sent": 4,
     "failed": 0
   },
-  "receivedPushEvents": 1,
+  "receivedPushEvents": 2,
   "notifications": [
     {
       "title": "Low stock · SmartStock",
