@@ -5,14 +5,13 @@ A React/Vite progressive web application for small business inventory, built to 
 ## Run locally
 
 ```powershell
-cd "C:\Users\aryap\Desktop\Final Project\SmartStock"
-npm install
+npm ci
 npm run keys
 npm run build
 npm start
 ```
 
-Open **http://127.0.0.1:4000**. The built version enables the service worker. Development: `npm run dev`, open http://127.0.0.1:5173 (service worker intentionally disabled in development).
+Run the commands from the project folder. After initial setup, double-click `Start-SmartStock.cmd` or run `npm start`. Wait for the API-ready message, then open **http://127.0.0.1:4000**. Press Ctrl+C in the launcher to stop it. The built version enables the service worker. Development: `npm run dev`, open http://127.0.0.1:5173 (service worker intentionally disabled in development).
 
 Demo accounts (only when `SEED_DEMO=true`): `manager@smartstock.demo` and `employee@smartstock.demo`, password `SmartStock!2026`. Public registration always creates employees. Do not deploy with seeded accounts.
 
